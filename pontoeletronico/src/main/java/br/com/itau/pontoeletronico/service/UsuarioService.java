@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +54,10 @@ public class UsuarioService {
 		Usuario usuario = new Usuario(usuarioDTO.getNomeCompleto(), usuarioDTO.getCpf(), usuarioDTO.getEmail(),
 				usuarioDTO.getDataCadastro());
 		return usuario;
+	}
+
+	public Usuario consultarUsuario(@Valid Long id) {
+		return usuarioRepository.findById(id).get();
 	}
 
 }

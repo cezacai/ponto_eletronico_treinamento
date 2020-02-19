@@ -22,7 +22,7 @@ import br.com.itau.pontoeletronico.model.Usuario;
 import br.com.itau.pontoeletronico.service.UsuarioService;
 
 @RestController
-@RequestMapping("/ponto-eletronico/usuarios")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
 	@Autowired
@@ -38,6 +38,11 @@ public class UsuarioController {
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Usuario> consultarListaUsuario() {
 		return usuarioService.consultarListaUsuario();
+	}
+
+	@GetMapping("/{id}")
+	public Usuario consultarUsuario(@Valid @PathVariable(value = "id") Long id) {
+		return usuarioService.consultarUsuario(id);
 	}
 
 	@PutMapping("/{id}")
