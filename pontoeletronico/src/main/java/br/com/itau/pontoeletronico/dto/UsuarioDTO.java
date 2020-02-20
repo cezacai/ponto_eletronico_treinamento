@@ -13,9 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UsuarioDTO  implements Serializable
 {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -510536145807285536L;
 
 	
